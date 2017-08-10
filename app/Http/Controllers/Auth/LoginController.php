@@ -82,7 +82,7 @@ class LoginController extends Controller
             }
             else
             {
-                return redirect()->back()
+                return redirect()->route('login')
                         ->with(['error' => 'Wrong credentials'])
                         ->withInput();
             }
@@ -112,6 +112,6 @@ class LoginController extends Controller
     {
         Sentinel::logout();
         Session::flash('success' , "Successfully Logged Out" );
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
 }
