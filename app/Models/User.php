@@ -3,19 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use \Cartalyst\Sentinel\Users\EloquentUser;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 
-class User extends Authenticatable
+class User extends EloquentUser
 {
     use Notifiable;
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'email', 'password', 'permissions', 'last_login', 'first_name', 'last_name', 'created_at', 'updated_at'
-    ];
-    protected $table = 'users';
 }
